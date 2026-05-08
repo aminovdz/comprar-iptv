@@ -1,0 +1,116 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	return [
+		{ params: { competitor: "operadores-tradicionales" }, props: { name: "Operadores Tradicionales", slug: "operadores-tradicionales" } },
+		{ params: { competitor: "satelite" }, props: { name: "Televisión por Satélite", slug: "satelite" } },
+	];
+}
+
+const { name, slug } = Astro.props;
+const brandName = "comprar iptv";
+const waLink = "https://wa.link/9ezhx6";
+
+const comparisonData = {
+	"operadores-tradicionales": {
+		title: `${brandName} vs Operadores de Fibra Tradicionales`,
+		intro: "¿Cansado de pagar facturas de más de 100€ al mes? Comparamos nuestra solución de IPTV con los operadores convencionales en España.",
+		benefits: [
+			{ title: "Precio", brand: "Desde 8€/mes", competitor: "Más de 80€/mes", winner: "brand" },
+			{ title: "Permanencia", brand: "Sin compromiso", competitor: "12-24 meses", winner: "brand" },
+			{ title: "Instalación", brand: "Instantánea", competitor: "Requiere técnico", winner: "brand" },
+			{ title: "Contenido", brand: "Global (VOD+Canales)", competitor: "Paquetes limitados", winner: "brand" },
+		]
+	},
+	"satelite": {
+		title: `${brandName} vs Televisión por Satélite`,
+		intro: "El satélite es cosa del pasado. Descubre por qué el IPTV profesional es la opción más estable y económica en 2026.",
+		benefits: [
+			{ title: "Clima", brand: "No le afecta", competitor: "Cortes con lluvia/nieve", winner: "brand" },
+			{ title: "Hardware", brand: "Cualquier dispositivo", competitor: "Requiere parabólica", winner: "brand" },
+			{ title: "Calidad", brand: "4K Real", competitor: "Limitado a HD", winner: "brand" },
+			{ title: "Movilidad", brand: "Llévalo en tu móvil", competitor: "Solo en casa", winner: "brand" },
+		]
+	}
+};
+
+const data = comparisonData[slug];
+---
+
+<Layout 
+	title={`${data.title} | ¿Cuál es mejor en 2026?`}
+	description={`Comparativa detallada entre ${brandName} y ${name}. Ahorra dinero y gana en contenido con el mejor IPTV de España.`}
+>
+	<header class="fixed top-0 w-full z-50 glass border-b border-white/5 px-6 py-4">
+		<div class="max-w-7xl mx-auto flex justify-between items-center">
+			<a href="/" class="text-2xl font-bold tracking-tighter flex items-center gap-2">
+				<span class="text-primary">Comprar</span><span class="text-secondary">IPTV</span>
+			</a>
+			<a href={waLink} class="bg-primary text-white px-5 py-2 rounded-full text-sm font-bold">Probar Gratis</a>
+		</div>
+	</header>
+
+	<main class="pt-32 pb-20 px-6">
+		<div class="max-w-4xl mx-auto">
+			<div class="text-center mb-16">
+				<h1 class="text-4xl md:text-6xl font-bold mb-6">{data.title}</h1>
+				<p class="text-slate-400 text-lg">{data.intro}</p>
+			</div>
+
+			<div class="glass-card rounded-3xl overflow-hidden border-white/10">
+				<table class="w-full text-left border-collapse">
+					<thead>
+						<tr class="bg-white/5">
+							<th class="p-6 font-bold">Característica</th>
+							<th class="p-6 font-bold text-secondary text-center">{brandName}</th>
+							<th class="p-6 font-bold text-slate-500 text-center">{name}</th>
+						</tr>
+					</thead>
+					<tbody class="divide-y divide-white/5">
+						{data.benefits.map((benefit) => (
+							<tr>
+								<td class="p-6 font-medium text-slate-300">{benefit.title}</td>
+								<td class={`p-6 text-center font-bold ${benefit.winner === 'brand' ? 'text-green-400 bg-green-400/5' : ''}`}>
+									{benefit.brand}
+								</td>
+								<td class={`p-6 text-center text-slate-500`}>
+									{benefit.competitor}
+								</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+
+			<div class="mt-20 grid md:grid-cols-2 gap-12 items-center">
+				<div>
+					<h2 class="text-3xl font-bold mb-6">La conclusión es clara</h2>
+					<p class="text-slate-400 leading-relaxed mb-6">
+						Mientras que {name} sigue utilizando modelos de negocio obsoletos con precios inflados y permanencias abusivas, 
+						<strong>{brandName}</strong> ofrece libertad total, un catálogo infinitamente superior y un precio que cualquiera puede permitirse.
+					</p>
+					<ul class="space-y-4 mb-8">
+						<li class="flex items-start gap-3">
+							<div class="w-6 h-6 bg-secondary/20 rounded-full flex items-center justify-center text-secondary shrink-0 mt-1">✓</div>
+							<p class="text-sm text-slate-300">Más de 20.000 canales internacionales y locales.</p>
+						</li>
+						<li class="flex items-start gap-3">
+							<div class="w-6 h-6 bg-secondary/20 rounded-full flex items-center justify-center text-secondary shrink-0 mt-1">✓</div>
+							<p class="text-sm text-slate-300">Todas las plataformas de streaming en una sola app.</p>
+						</li>
+					</ul>
+					<a href={waLink} class="inline-block px-8 py-4 bg-primary text-white rounded-xl font-bold hover:scale-105 transition-transform">
+						Empezar a Ahorrar Hoy
+					</a>
+				</div>
+				<div class="glass-card p-8 rounded-3xl border-primary/20 text-center">
+					<div class="text-5xl font-bold text-primary mb-2">90%</div>
+					<div class="text-sm uppercase tracking-widest text-slate-500 mb-6">Más Económico</div>
+					<p class="text-slate-400 italic">"Cambié mi contrato de 120€ por el plan anual de Comprar IPTV y no puedo estar más contento. La calidad es idéntica y el ahorro es masivo."</p>
+					<div class="mt-4 font-bold">- Cliente verificado de Madrid</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>

@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+	{ slug: 'mejor-iptv-espana-2026', title: 'Cómo elegir el mejor IPTV en España 2026', desc: 'Descubre las claves para no fallar en tu elección.', icon: '🇪🇸' },
+	{ slug: 'iptv-vs-satelite', title: 'IPTV vs Satélite: ¿Cuál es mejor?', desc: 'Comparamos la televisión por satélite con el IPTV.', icon: '🛰️' },
+	{ slug: 'mejores-apps-smart-tv', title: 'Mejores Apps para Smart TV', desc: 'Las mejores aplicaciones para Samsung y LG.', icon: '📺' },
+	{ slug: 'configurar-iptv-firestick', title: 'Configurar IPTV en Firestick', desc: 'Guía paso a paso para Amazon Firestick.', icon: '🔥' },
+	{ slug: 'comprar-iptv-seguro', title: '¿Es seguro comprar IPTV?', desc: 'Todo lo que necesitas saber sobre privacidad.', icon: '🛡️' },
+	{ slug: 'iptv-4k-requisitos', title: 'Requisitos Internet para 4K', desc: 'Velocidad necesaria para streaming fluido.', icon: '⚡' },
+	{ slug: 'evitar-cortes-iptv', title: 'Cómo evitar cortes en IPTV', desc: 'Trucos para máxima estabilidad.', icon: '⚽' },
+	{ slug: 'mejores-apps-android', title: 'Mejores Apps para Android', desc: 'Las mejores opciones para móviles y TV Box.', icon: '🤖' },
+	{ slug: 'iptv-movil-guia', title: 'IPTV en el móvil', desc: 'Lleva tu televisión a todas partes.', icon: '📱' },
+	{ slug: 'iptv-premium-vs-gratis', title: 'Premium vs Listas Gratis', desc: 'Por qué vale la pena invertir en calidad.', icon: '💎' },
+];
+
+const title = "Blog de IPTV | Guías y Tutoriales en Español";
+const description = "Aprende todo sobre el mundo del IPTV: mejores aplicaciones, guías de configuración y consejos de seguridad.";
+---
+
+<Layout title={title} description={description}>
+	<div class="pt-32 pb-24 px-6">
+		<div class="max-w-7xl mx-auto">
+			<header class="text-center mb-16">
+				<h1 class="text-5xl md:text-7xl font-bold mb-6">Blog & Guías</h1>
+				<p class="text-slate-400 text-xl">Todo lo que necesitas saber para dominar tu servicio de IPTV.</p>
+			</header>
+
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{posts.map(post => (
+					<a href={`/blog/${post.slug}`} class="glass-card p-8 rounded-[32px] group hover:border-primary/30 transition-all flex flex-col">
+						<div class="w-16 h-16 bg-white/5 rounded-2xl mb-6 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+							{post.icon}
+						</div>
+						<h2 class="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{post.title}</h2>
+						<p class="text-slate-400 mb-8 flex-grow">{post.desc}</p>
+						<span class="text-sm font-bold text-primary group-hover:translate-x-2 transition-transform inline-flex items-center gap-2">
+							Leer más <span>→</span>
+						</span>
+					</a>
+				))}
+			</div>
+		</div>
+	</div>
+</Layout>

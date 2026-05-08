@@ -1,0 +1,205 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const posts = [
+		{
+			slug: "mejor-iptv-espana-2026",
+			title: "Mejor IPTV España 2026: El Comparatif Definitivo",
+			content: `
+				<p>El mercado del IPTV en España ha evolucionado rápidamente hacia servicios de alta gama. En 2026, los usuarios ya no solo buscan precio, sino una <strong>estabilidad garantizada</strong> y soporte técnico en castellano.</p>
+				
+				<h2>¿Qué hace que un IPTV sea el mejor?</h2>
+				<p>Un servicio de calidad debe contar con servidores alojados en Europa, tecnología Anti-Freeze real y un catálogo VOD que se actualice semanalmente. Además, la compatibilidad con apps como Tivimate es fundamental.</p>
+				
+				<h3>Top 3 de beneficios premium</h3>
+				<ul>
+					<li><strong>Estabilidad:</strong> Servidores redundantes para eventos deportivos.</li>
+					<li><strong>Calidad:</strong> Canales en 4K real y Full HD a 50 FPS.</li>
+					<li><strong>Soporte:</strong> Ayuda inmediata por WhatsApp o Telegram.</li>
+				</ul>
+				
+				<h2>Conclusión</h2>
+				<p>No te arriesgues con servicios baratos que fallan en el momento clave. Prueba nuestro servicio durante 24 horas y descubre la diferencia.</p>
+			`
+		},
+		{
+			slug: "instalar-iptv-smart-tv-samsung-lg",
+			title: "Cómo instalar IPTV en Smart TV Samsung y LG (Guía 2026)",
+			content: `
+				<p>Configurar tu suscripción IPTV en una Smart TV de Samsung o LG es un proceso sencillo que no requiere hardware adicional.</p>
+				
+				<h2>Aplicaciones recomendadas para Smart TV</h2>
+				<ul>
+					<li>IBO Player (Recomendada)</li>
+					<li>Nanomid</li>
+					<li>Smart IPTV</li>
+					<li>IPTV Smarters Pro</li>
+				</ul>
+				
+				<h2>Pasos para la activación</h2>
+				<ol>
+					<li>Descarga la aplicación elegida desde la tienda de tu televisor.</li>
+					<li>Apunta el ID del dispositivo o la dirección MAC.</li>
+					<li>Proporciona estos datos a nuestro equipo de soporte.</li>
+					<li>Reinicia la aplicación y ¡listo!</li>
+				</ol>
+			`
+		},
+		{
+			slug: "guia-iptv-smarters-pro",
+			title: "IPTV Smarters Pro: Guía completa de configuración",
+			content: `
+				<p><strong>IPTV Smarters Pro</strong> es la aplicación más versátil del mercado. Disponible para prácticamente cualquier dispositivo, permite gestionar tu suscripción con una interfaz limpia y profesional.</p>
+				
+				<h2>Configuración rápida con Xtream Codes</h2>
+				<p>Para configurar la app, solo necesitas cuatro datos que te proporcionaremos al contratar tu plan:</p>
+				<ul>
+					<li>Nombre de la lista (Cualquiera)</li>
+					<li>Usuario</li>
+					<li>Contraseña</li>
+					<li>URL del servidor</li>
+				</ul>
+				
+				<p>Una vez introducidos, tendrás acceso a todos los canales, películas y series organizados por categorías.</p>
+			`
+		},
+		{
+			slug: "tivimate-premium-opiniones",
+			title: "Tivimate Premium: ¿Por qué es el mejor reproductor IPTV?",
+			content: `
+				<p>Si tienes un Amazon Firestick o un Android Box, <strong>Tivimate Premium</strong> es, sin duda, la aplicación definitiva para disfrutar de la televisión por internet.</p>
+				
+				<h2>Una experiencia de TV tradicional</h2>
+				<p>Tivimate destaca por su guía de programación (EPG) ultra-fluida y su capacidad para gestionar múltiples listas de reproducción. Su diseño es tan profesional que olvidarás que estás usando IPTV.</p>
+				
+				<h3>Funciones clave de la versión Premium</h3>
+				<p>Grabación de programas, multi-pantalla (ver varios canales a la vez) y personalización total de los grupos de canales.</p>
+			`
+		},
+		{
+			slug: "evitar-bloqueos-iptv-movistar-digi",
+			title: "Evitar bloqueos IPTV de Movistar, Digi y Vodafone",
+			content: `
+				<p>En España, algunos operadores de internet utilizan bloqueos DNS o filtrado de tráfico para interrumpir las emisiones de IPTV, especialmente durante los partidos de fútbol.</p>
+				
+				<h2>La solución definitiva: Cambiar DNS</h2>
+				<p>Configura tu dispositivo con las DNS de Google (8.8.8.8) o Cloudflare (1.1.1.1). Este simple cambio soluciona el 90% de los problemas de conexión en España.</p>
+				
+				<h2>Uso de VPN en casos extremos</h2>
+				<p>Si el bloqueo persiste, una VPN te permitirá navegar con una IP de otro país, saltando cualquier restricción local de tu operador de internet.</p>
+			`
+		},
+		{
+			slug: "iptv-legal-espana-2026",
+			title: "IPTV Legal en España 2026: Lo que dice la ley",
+			content: `
+				<p>Es importante entender que la tecnología IPTV es 100% legal. Lo que está regulado es el acceso a contenidos protegidos por derechos de autor sin la debida licencia.</p>
+				
+				<h2>¿Qué servicios son 100% legales?</h2>
+				<p>Plataformas como RTVE Play, Atresplayer o Rakuten TV utilizan tecnología IPTV. El uso de reproductores como VLC o Smarters Pro también es legal.</p>
+				
+				<h2>Recomendaciones de seguridad</h2>
+				<p>Utiliza siempre servicios con buena reputación y protege tu conexión para disfrutar de una experiencia privada y segura.</p>
+			`
+		},
+		{
+			slug: "prueba-iptv-gratis-24h",
+			title: "Prueba IPTV Gratis 24h: Cómo conseguirla sin compromiso",
+			content: `
+				<p>Queremos que estés 100% seguro de la calidad de nuestro servicio antes de realizar cualquier pago. Por eso, ofrecemos pruebas gratuitas de 24 horas.</p>
+				
+				<h2>¿Qué incluye la prueba?</h2>
+				<p>Tendrás acceso total a los más de 20,000 canales y a todo el catálogo de películas y series en 4K. Podrás comprobar la estabilidad durante eventos en directo.</p>
+				
+				<h2>Cómo solicitarla</h2>
+				<p>Contacta con nosotros por WhatsApp indicando el dispositivo que vas a usar. Te enviaremos los códigos de acceso al instante.</p>
+			`
+		},
+		{
+			slug: "configurar-iptv-firestick-paso-a-paso",
+			title: "Configurar IPTV en Amazon Firestick paso a paso",
+			content: `
+				<p>El Amazon Fire TV Stick es el dispositivo más vendido en España para ver IPTV. Su potencia y precio lo hacen imbatible.</p>
+				
+				<h2>Instalación de apps de terceros</h2>
+				<p>Para instalar apps como IPTV Smarters o Tivimate, primero debes habilitar la instalación de aplicaciones de origen desconocido en los ajustes de "Mi Fire TV".</p>
+				
+				<h2>Pasos a seguir</h2>
+				<ol>
+					<li>Instala la app 'Downloader' desde la tienda oficial de Amazon.</li>
+					<li>Introduce el código de descarga de la app IPTV que prefieras.</li>
+					<li>Configura tus credenciales y empieza a disfrutar.</li>
+				</ol>
+			`
+		},
+		{
+			slug: "problemes-estabilidad-iptv-soluciones",
+			title: "Problemas de estabilidad IPTV: Causas y soluciones",
+			content: `
+				<p>¿Tu IPTV se corta constantemente? Aquí tienes una lista de comprobaciones para solucionar los problemas más comunes de buffering.</p>
+				
+				<h2>Conexión por Cable vs Wi-Fi</h2>
+				<p>Siempre que sea posible, conecta tu dispositivo por cable Ethernet. El Wi-Fi puede sufrir interferencias que causan micro-cortes en la señal 4K.</p>
+				
+				<h2>Velocidad de Internet</h2>
+				<p>Para una señal 4K estable, necesitas al menos 25 Mbps reales. Asegúrate de que no haya otros dispositivos consumiendo todo el ancho de banda.</p>
+			`
+		},
+		{
+			slug: "alternativas-dazn-movistar-futbol",
+			title: "Mejores alternativas a DAZN y Movistar para el fútbol 2026",
+			content: `
+				<p>Los precios del fútbol en España han subido un 30% en los últimos años, obligando a los aficionados a buscar alternativas más inteligentes y económicas.</p>
+				
+				<h2>El pack Todo-en-Uno</h2>
+				<p>Nuestro servicio IPTV profesional aglutina todos los canales deportivos nacionales e internacionales en una sola suscripción, ahorrándote más de 100€ al mes.</p>
+				
+				<h2>Calidad de imagen</h2>
+				<p>Ofrecemos emisiones en 50 FPS, lo que garantiza una fluidez perfecta en el movimiento del balón, algo que notarás inmediatamente en comparación con servicios de baja calidad.</p>
+			`
+		}
+	];
+
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+---
+
+<Layout 
+	title={`${post.title} | Blog Comprar IPTV`}
+	description={post.content.replace(/<[^>]*>/g, '').substring(0, 160)}
+>
+	<article class="pt-40 pb-24 px-6">
+		<div class="max-w-3xl mx-auto">
+			<a href="/blog" class="inline-flex items-center gap-2 text-secondary font-bold mb-12 hover:translate-x-[-4px] transition-transform">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+				Volver al blog
+			</a>
+			
+			<h1 class="text-4xl md:text-5xl font-bold mb-12 leading-tight text-white">{post.title}</h1>
+			
+			<div class="prose prose-invert prose-lg max-w-none prose-headings:text-secondary prose-a:text-primary prose-strong:text-white text-slate-300">
+				<div set:html={post.content} />
+			</div>
+
+			<div class="mt-20 glass-card p-12 rounded-[40px] text-center border-primary/20 relative overflow-hidden">
+				<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[80px]"></div>
+				<h3 class="text-3xl font-bold mb-6">¿Quieres probar la diferencia?</h3>
+				<p class="text-slate-400 mb-10 text-lg">Solicita tu prueba de 24 horas y descubre por qué somos el servicio mejor valorado de España.</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a href="/#pricing" class="bg-primary text-white px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+						Ver Planes y Precios
+					</a>
+					<a href="https://wa.link/9ezhx6" class="glass text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all border border-white/10">
+						Pedir Prueba Gratis
+					</a>
+				</div>
+			</div>
+		</div>
+	</article>
+</Layout>

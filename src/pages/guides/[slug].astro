@@ -1,0 +1,105 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const guides = [
+		{ 
+			slug: "instalar-iptv-smart-tv", 
+			title: "Cómo instalar IPTV en Smart TV (Samsung, LG, Android TV)",
+			desc: "Guía paso a paso para configurar tu lista IPTV en cualquier Smart TV en menos de 5 minutos.",
+			content: "Instalar IPTV en tu televisión inteligente es mucho más sencillo de lo que parece. Sigue estos pasos..."
+		},
+		{ 
+			slug: "mejor-app-iptv-android", 
+			title: "Las 5 Mejores Aplicaciones de IPTV para Android en 2026",
+			desc: "Analizamos las mejores apps para ver IPTV en tu móvil o TV Box Android con total fluidez.",
+			content: "Si tienes un dispositivo Android, tienes suerte. El ecosistema de aplicaciones es enorme..."
+		}
+	];
+
+	return guides.map((guide) => ({
+		params: { slug: guide.slug },
+		props: { guide },
+	}));
+}
+
+const { guide } = Astro.props;
+const brandName = "comprar iptv";
+const waLink = "https://wa.link/9ezhx6";
+---
+
+<Layout 
+	title={`${guide.title} | Centro de Ayuda ${brandName}`}
+	description={guide.desc}
+>
+	<header class="fixed top-0 w-full z-50 glass border-b border-white/5 px-6 py-4">
+		<div class="max-w-7xl mx-auto flex justify-between items-center">
+			<a href="/" class="text-2xl font-bold tracking-tighter flex items-center gap-2">
+				<span class="text-primary">Comprar</span><span class="text-secondary">IPTV</span>
+			</a>
+			<a href="/guides" class="text-sm font-medium hover:text-secondary">Volver a Guías</a>
+		</div>
+	</header>
+
+	<main class="pt-32 pb-20 px-6">
+		<article class="max-w-3xl mx-auto">
+			<div class="mb-12">
+				<div class="text-secondary text-sm font-bold uppercase tracking-widest mb-4">Guía Técnica</div>
+				<h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">{guide.title}</h1>
+				<p class="text-slate-400 text-lg leading-relaxed italic border-l-4 border-primary pl-6 py-2">
+					{guide.desc}
+				</p>
+			</div>
+
+			<div class="prose prose-invert max-w-none prose-headings:text-white prose-p:text-slate-300 prose-strong:text-secondary prose-li:text-slate-300">
+				<p>
+					Bienvenidos a la base de conocimientos de <strong>{brandName}</strong>. En este artículo vamos a resolver una de las dudas más frecuentes de nuestros usuarios en España.
+				</p>
+				
+				<h2 class="text-2xl font-bold mt-12 mb-6">Paso 1: Preparación del dispositivo</h2>
+				<p>
+					Antes de comenzar, asegúrate de tener una conexión estable a internet (preferiblemente por cable Ethernet) y de haber solicitado tu <strong>prueba IPTV gratuita</strong> con nuestro equipo.
+				</p>
+
+				<div class="bg-primary/10 border border-primary/20 p-8 rounded-3xl my-12">
+					<h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+						<span class="text-primary">💡</span> Consejo Pro
+					</h3>
+					<p class="text-sm text-slate-300">
+						Muchos usuarios experimentan cortes por usar Wi-Fi en canales saturados. Si puedes, conecta tu Smart TV directamente al router para disfrutar de canales 4K sin buffering.
+					</p>
+				</div>
+
+				<h2 class="text-2xl font-bold mt-12 mb-6">Paso 2: Elección de la Aplicación</h2>
+				<p>
+					Dependiendo de tu sistema operativo, te recomendamos las siguientes aplicaciones:
+				</p>
+				<ul>
+					<li><strong>Samsung/LG:</strong> IBO Player, SMART IPTV, SET IPTV.</li>
+					<li><strong>Android TV / Firestick:</strong> IPTV Smarters Pro, Tivimate (Altamente recomendada).</li>
+					<li><strong>iOS / Apple TV:</strong> GSE Smart IPTV, IPTV Expert.</li>
+				</ul>
+
+				<h2 class="text-2xl font-bold mt-12 mb-6">Conclusión</h2>
+				<p>
+					Una vez configurada la app, solo tienes que introducir los datos que te enviamos por WhatsApp y listo. Si tienes cualquier problema durante el proceso, recuerda que nuestro soporte está disponible 24/7.
+				</p>
+			</div>
+
+			<!-- Permanent Promo Banner -->
+			<div class="mt-20 glass-card p-10 rounded-3xl text-center border-secondary/30 relative overflow-hidden">
+				<div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl"></div>
+				<h2 class="text-2xl font-bold mb-4">¿Aún no tienes tu suscripción?</h2>
+				<p class="text-slate-400 mb-8">Únete a la mejor comunidad de IPTV en España y no te pierdas ni un solo evento más.</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a href={waLink} class="px-8 py-4 bg-secondary text-dark rounded-xl font-bold hover:scale-105 transition-transform">
+						Contratar IPTV Profesional
+					</a>
+					<a href="https://t.me/Iplivesat" class="px-8 py-4 glass text-white rounded-xl font-bold border border-white/10">
+						Solicitar Prueba Gratis
+					</a>
+				</div>
+			</div>
+		</article>
+	</main>
+</Layout>

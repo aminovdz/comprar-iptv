@@ -1,0 +1,138 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+	const cities = [
+		{ id: 'madrid', name: 'Madrid', region: 'Comunidad de Madrid' },
+		{ id: 'barcelona', name: 'Barcelona', region: 'Cataluña' },
+		{ id: 'valencia', name: 'Valencia', region: 'Comunidad Valenciana' },
+		{ id: 'zaragoza', name: 'Zaragoza', region: 'Aragón' },
+		{ id: 'sevilla', name: 'Sevilla', region: 'Andalucía' }
+	];
+	return cities.map((city) => ({
+		params: { city: city.id },
+		props: { cityName: city.name, regionName: city.region },
+	}));
+}
+
+const { cityName, regionName } = Astro.props;
+
+const title = `IPTV en ${cityName} - Mejor suscripción IPTV Premium en ${cityName} (${regionName})`;
+const description = `Buscas el mejor IPTV en ${cityName}? Nuestra suscripción ofrece canales 4K, fútbol en directo y VOD ilimitado. El servicio más estable de toda ${regionName}.`;
+
+const pricing = [
+	{ name: "1 Mes", price: "8€", popular: false },
+	{ name: "3 Meses", price: "20€", popular: false },
+	{ name: "6 Meses", price: "30€", popular: false },
+	{ name: "12 Meses", price: "55€", popular: true }
+];
+
+const waLink = "https://wa.link/9ezhx6";
+---
+
+<Layout title={title} description={description}>
+	<!-- Hero Section -->
+	<section class="relative pt-40 pb-20 px-6 overflow-hidden">
+		<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+		<div class="max-w-7xl mx-auto text-center relative z-10">
+			<h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+				Mejor IPTV en <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">{cityName}</span>
+			</h1>
+			<p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
+				Disfruta de la mejor televisión digital en {cityName}. Calidad 4K, canales premium de España y soporte local 24/7.
+			</p>
+			<div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+				<a href="#pricing" class="bg-primary text-white px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-primary/20">Ver Ofertas en {cityName}</a>
+				<a href={waLink} class="glass text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all border border-white/10">Prueba Gratis 24h</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Local Info -->
+	<section class="py-24 px-6 bg-white/[0.01]">
+		<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+			<div>
+				<h2 class="text-4xl font-bold mb-8 text-white leading-tight">¿Por qué somos el IPTV #1 en {cityName}?</h2>
+				<div class="space-y-6 text-slate-400 text-lg leading-relaxed">
+					<p>Si vives en <strong>{cityName}</strong> o cualquier punto de <strong>{regionName}</strong>, sabes que una buena conexión es vital para ver fútbol y cine sin cortes. Nuestro servicio está optimizado para los principales operadores de España (Movistar, Digi, Vodafone, Orange).</p>
+					<p>En {cityName}, nuestros servidores ofrecen una latencia mínima, lo que se traduce en un zapping instantáneo y una fluidez perfecta en canales deportivos de 50 FPS.</p>
+					<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+						<li class="flex items-center gap-3 text-sm text-white font-semibold">
+							<span class="w-2 h-2 rounded-full bg-secondary"></span>
+							Optimizado para fibra en {cityName}
+						</li>
+						<li class="flex items-center gap-3 text-sm text-white font-semibold">
+							<span class="w-2 h-2 rounded-full bg-secondary"></span>
+							Soporte técnico local 24/7
+						</li>
+						<li class="flex items-center gap-3 text-sm text-white font-semibold">
+							<span class="w-2 h-2 rounded-full bg-secondary"></span>
+							Activación en 15 minutos
+						</li>
+						<li class="flex items-center gap-3 text-sm text-white font-semibold">
+							<span class="w-2 h-2 rounded-full bg-secondary"></span>
+							Sin contratos ni permanencia
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="glass-card p-12 rounded-[40px] border-white/5 relative overflow-hidden group">
+				<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/10 rounded-full blur-[80px]"></div>
+				<h3 class="text-2xl font-bold mb-8 text-white">Instalación en {cityName}</h3>
+				<div class="space-y-8 relative z-10">
+					<div class="flex gap-6">
+						<div class="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary font-bold shrink-0">1</div>
+						<div>
+							<h4 class="font-bold text-white mb-1">Elige tu plan</h4>
+							<p class="text-slate-500 text-sm">Selecciona la duración que mejor se adapte a ti.</p>
+						</div>
+					</div>
+					<div class="flex gap-6">
+						<div class="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary font-bold shrink-0">2</div>
+						<div>
+							<h4 class="font-bold text-white mb-1">Recibe tus accesos</h4>
+							<p class="text-slate-500 text-sm">Te enviamos tus códigos Xtream o lista M3U por WhatsApp.</p>
+						</div>
+					</div>
+					<div class="flex gap-6">
+						<div class="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary font-bold shrink-0">3</div>
+						<div>
+							<h4 class="font-bold text-white mb-1">Disfruta en {cityName}</h4>
+							<p class="text-slate-500 text-sm">Configura tu Smart TV, Firestick o Móvil y ¡listo!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Local Pricing -->
+	<section id="pricing" class="py-24 px-6">
+		<div class="max-w-7xl mx-auto">
+			<div class="text-center mb-16">
+				<h2 class="text-4xl md:text-5xl font-bold mb-4">Planes Exclusivos en {cityName}</h2>
+				<p class="text-slate-400 text-lg">Calidad premium al mejor precio de {regionName}.</p>
+			</div>
+			<div class="grid md:grid-cols-4 gap-8">
+				{pricing.map((plan) => (
+					<div class={`glass-card p-8 rounded-[32px] flex flex-col relative ${plan.popular ? 'border-primary shadow-2xl shadow-primary/10' : 'border-white/5'}`}>
+						{plan.popular && <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Más Popular</span>}
+						<h3 class="text-xl font-bold mb-6">{plan.name}</h3>
+						<div class="flex items-baseline gap-1 mb-8">
+							<span class="text-5xl font-black text-white">{plan.price}</span>
+						</div>
+						<ul class="space-y-4 mb-10 text-sm text-slate-400 flex-1">
+							<li class="flex items-center gap-3"><span class="text-primary">✓</span> +20,000 Canales Mundiales</li>
+							<li class="flex items-center gap-3"><span class="text-primary">✓</span> Cine y Series (VOD 4K)</li>
+							<li class="flex items-center gap-3"><span class="text-primary">✓</span> Sin Cortes (Anti-Freeze)</li>
+							<li class="flex items-center gap-3"><span class="text-primary">✓</span> Soporte en {cityName}</li>
+						</ul>
+						<a href={waLink} class={`py-4 rounded-2xl font-bold text-center transition-all ${plan.popular ? 'bg-primary text-white hover:scale-105 shadow-lg shadow-primary/20' : 'glass text-white hover:bg-white/10 border border-white/10'}`}>
+							Contratar Ahora
+						</a>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+</Layout>
