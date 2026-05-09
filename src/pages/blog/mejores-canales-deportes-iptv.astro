@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = "Mejores Canales de Deportes en IPTV: No te pierdas ningún evento";
+const description = "Descubre la mejor selección de canales deportivos internacionales disponibles en tu suscripción IPTV premium.";
+---
+
+<Layout title={title} description={description}>
+	<div class="pt-32 pb-24 px-6">
+		<article class="max-w-3xl mx-auto glass-card p-8 md:p-12 rounded-[40px] border-white/10">
+			<header class="mb-12 text-center">
+				<div class="inline-block px-4 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold mb-6 uppercase tracking-widest">Deportes</div>
+				<h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">{title}</h1>
+			</header>
+
+			<div class="prose prose-invert prose-lg max-w-none text-slate-300">
+				<p>Para los apasionados del deporte, el IPTV ofrece acceso a ligas y eventos que no están disponibles en la televisión convencional.</p>
+				<h2>Fútbol Internacional</h2>
+				<p>Accede a la Champions League, La Liga, Premier League y Serie A con calidad 4K y sin retrasos.</p>
+				<h2>Motor y Adrenalina</h2>
+				<p>Disfruta de la Fórmula 1 y MotoGP desde diferentes cámaras y con telemetría en vivo a través de canales especializados.</p>
+				<h2>Deportes de Combate</h2>
+				<p>UFC, Boxeo y WWE con todos los eventos PPV incluidos en tu lista de canales habitual.</p>
+			</div>
+		</article>
+	</div>
+</Layout>
