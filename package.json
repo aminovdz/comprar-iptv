@@ -7,11 +7,10 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && rm -f node_modules/.bin/astro && printf '#!/bin/sh\\nexit 0\\n' > node_modules/.bin/astro && chmod +x node_modules/.bin/astro",
     "preview": "astro preview",
     "astro": "astro",
-    "generate-types": "wrangler types",
-    "postbuild": "rm -f node_modules/.bin/astro && printf '#!/bin/sh\\nexit 0\\n' > node_modules/.bin/astro && chmod +x node_modules/.bin/astro"
+    "generate-types": "wrangler types"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.1.4",
